@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-toolbar>Distance Calculator</mat-toolbar>
+
+  <div class="example-container">
+    <mat-form-field>
+      <input placeholder="Select Origin" [disabled]="disabled" matInput ngx-google-places-autocomplete [options]="options"
+        #placesRef="ngx-places" (onAddressChange)="handleOriginChange($event)" />
+      <mat-spinner matSuffix color="accent" [diameter]="20" *ngIf="loading">
+      </mat-spinner>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input placeholder="Select Destination" [disabled]="disabled" matInput ngx-google-places-autocomplete [options]="options"
+        #placesRef="ngx-places" (onAddressChange)="handleDestinationChange($event)" />
+      <mat-spinner matSuffix color="accent" [diameter]="20" *ngIf="loading">
+      </mat-spinner>
+    </mat-form-field>
+
+    <button mat-button (click)="this.calculateDistance()">Calculate Distance</button>
+
+
+
+  </div>
+
+
+
+</div>
